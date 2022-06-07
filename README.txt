@@ -14,9 +14,11 @@ If any of these are missing, the do file may fail.
 
 EXCEL
 - 2020pop.xlsx
-- nytcounty.dta
 - zipcounty.xlsx
 - ziphouse.xlsx
+
+STATA
+- nytcounty.dta
 
 TEXT
 - README.txt
