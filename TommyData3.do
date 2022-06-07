@@ -3,7 +3,7 @@
 * replace this global with your path to the Data3 folder.
 * if you don't do this, the file won't run!
  
-global directory C:\users\morganto\desktop\ECON388_DataProject3-main
+global directory "C:\Users\morganto\Desktop\ECON388_DataProject3-main"
 
 // Now that that's out of the way:
 
@@ -16,39 +16,37 @@ global directory C:\users\morganto\desktop\ECON388_DataProject3-main
 
 * PHASE ONE: Basic Cleaning
 
-clear
 cd $directory
-import excel 2020pop, firstrow
+import excel 2020pop, firstrow clear
 drop badid CountyFull
 rename ID FIPS
 rename PopTotal pop2020
-save 2020pop
-clear
+save 2020pop, replace
 
-import excel nytcounty, firstrow
+/* This is what I did to clean the nytcounty .csv you can get at the link
+import delimited nytcounty, clear
+gen ID = substr(geoid, -5, 5)
 drop geoid county state date cases cases_avg cases_avg_per_100k deaths_avg deaths_avg_per_100k
 rename ID FIPS
-save nytcounty
-clear
+save nytcounty, replace
+*/
 
-import excel zipcounty, firstrow
+import excel zipcounty, firstrow clear
 drop RES_RATIO BUS_RATIO OTH_RATIO TOT_RATIO
 rename ZIP zip5
 rename COUNTY FIPS
-save zipcounty
-clear
+save zipcounty, replace
 
-import excel ziphouse, firstrow
+import excel ziphouse, firstrow clear
 drop IndexType
 rename Quarter quarter
-save ziphouse
-clear
+save ziphouse, replace
 
 
 * PHASE TWO: Data Prepping
 
 * Part 1: ZIP3-based Housing Price Index Cleanup
-use ziphouse
+use ziphouse, clear
 rename zip3 prefix
 gen str3 zip3 = string(prefix,"%03.0f")
 drop prefix
@@ -174,4 +172,4 @@ browse
 
 
 * That's all, folks!
-erase mortwagehouse.dta
+// erase mortwagehouse.dta
