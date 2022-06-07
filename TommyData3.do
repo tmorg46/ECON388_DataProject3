@@ -3,7 +3,7 @@
 * replace this global with your path to the Data3 folder.
 * if you don't do this, the file won't run!
  
-global directory C:\users\morganto\desktop\Data3
+global directory C:\users\morganto\desktop\ECON388_DataProject3-main
 
 // Now that that's out of the way:
 
