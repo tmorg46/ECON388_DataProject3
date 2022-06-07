@@ -14,7 +14,7 @@ If any of these are missing, the do file may fail.
 
 EXCEL
 - 2020pop.xlsx
-- nytcounty.xlsx
+- nytcounty.dta
 - zipcounty.xlsx
 - ziphouse.xlsx
 
@@ -54,12 +54,11 @@ The columns on this file are ID, badid, County Full, and PopTotal. I used this f
 because it provided data on county level populations in 2020.
 LINK: https://data.census.gov/cedsci/table?q=United%20States&tid=DECENNIALPL2020.P1
 
-- nytcounty.xlsx
+- nytcounty.dta
 This is a dataset of county level day-to-day COVID death counts from the New York
-Times. The source link leads to a page with a download button. After downloading
-this dataset, I created a 5-digit FIPS code column. The columns on this file are
-ID, geoid, county, state, cases, cases_avg, cases_avg_per_100k, deaths, deaths_avg,
-and deaths_avg_per_100k. I used this file because it provided data on county level
+Times. The source link leads to a page with a download button. In order to upload this file
+to GitHub, I had to upload the cleaned file. The do-file has the section I used to clean the below-
+linked .csv file commented out. I used this file because it provided data on county level
 COVID-19 deaths in 2020.
 LINK: https://github.com/nytimes/covid-19-data/blob/master/rolling-averages/us-counties-2020.csv
 
